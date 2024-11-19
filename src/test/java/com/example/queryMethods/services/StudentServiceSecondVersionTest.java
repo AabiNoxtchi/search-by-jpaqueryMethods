@@ -5,7 +5,7 @@ import com.example.queryMethods.models.entity.Student;
 import com.example.queryMethods.models.filter.StudentFilter;
 import com.example.queryMethods.repositories.CourseRepository;
 import com.example.queryMethods.repositories.StudentRepository;
-import com.example.queryMethods.service.StudentService;
+import com.example.queryMethods.service.StudentServiceSecondVersion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,16 +16,17 @@ import java.util.List;
 import java.util.Random;
 
 import static com.example.queryMethods.InitialTestData.*;
+import static com.example.queryMethods.InitialTestData.COURSE_NAMES;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class StudentServiceTest {
+public class StudentServiceSecondVersionTest {
 
     @Autowired
     StudentRepository studentRepository;
 
     @Autowired
-    StudentService studentService;
+    StudentServiceSecondVersion studentService;
 
     @Autowired
     CourseRepository courseRepository;

@@ -19,6 +19,9 @@ public class StudentService {
     public List<Student> findAll(StudentFilter filter) {
         List<Student> results = new ArrayList<>(studentRepository.findAll());
 
+        if (filter == null) {
+            return results;
+        }
         if (filter.getName() != null) {
             results.retainAll(studentRepository.findByNameContainingIgnoreCase(filter.getName()));
         }
@@ -48,3 +51,6 @@ public class StudentService {
         return results;
     }
 }
+
+
+

@@ -9,9 +9,12 @@ This system aims to demonstrate the use of JPA query methods
 - Cons:  
   - Less flexible than a Specification or Criteria API for complex filtering.  
   - and specific for this use case and the dynamic filtering approach: 
-    - Potential performance issues if the dataset is large, as filtering is done in memory (retainAll).
-    - and multiple select queries are done to database
+    - Potential performance issues if the dataset is large, as filtering is done in memory:
+      - retainAll in StudentService 
+      - stream filter in StudentServiceSecondVersion
+    - may need multiple select queries to database as in StudentService
 - result:
+  - Ideal for small-scale filtering needs.
   - for more complex or dynamic queries as this system's dynamic approach, Specifications or criteria Api, or Querydsl is more suitable choice
 <br>
 
